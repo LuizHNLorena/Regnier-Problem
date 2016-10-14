@@ -28,11 +28,11 @@ Example of use:
      'num_cols': 276,
      'objective': 72.0,
      'time_solver': 0.18799999999999994,
+     'groups': [0, 1, 0, 1, 2, 2, 3, 3, 0, 1, 0, 1, 2, 2, 3, 3, 0, 1, 0, 1, 2, 2, 3, 3]
      'heuristic': {'cut': 2,
                    'time_total': 0.008021116256713867, 
                    'time_graph_construction': 0.00701904296875, 
-                   'time_find_best_cut': 0.0010020732879638672}, 
-     'groups': [0, 1, 0, 1, 2, 2, 3, 3, 0, 1, 0, 1, 2, 2, 3, 3, 0, 1, 0, 1, 2, 2, 3, 3]}
+                   'time_find_best_cut': 0.0010020732879638672}}
 
 ### RegnierProblemLP
 
