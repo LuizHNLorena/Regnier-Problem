@@ -16,7 +16,7 @@ cplex-optimizer) solver and the [setup of its Python API](https://www.ibm.com/su
 
 ### RegnierProblem
 
-The following diagram represents the RegnierProblem class. The documentation for this class can be found at: [RegnierProblem.html](docs/RegnierProblem.html)
+The following diagram represents the RegnierProblem class. The documentation for this class can be found at: [docs/RegnierProblem.html](docs/RegnierProblem.html)
 
 ![RegnierProblem](docs/RegnierProblem.png)
 
@@ -38,7 +38,7 @@ Example of use:
 
 ### RegnierProblemLP
 
-The following diagram represents the RegnierProblemLP class. The documentation for this class can be found at:
+The following diagram represents the RegnierProblemLP class. The documentation for this class can be found at: [docs/RegnierProblemLP.py](docs/RegnierProblemLP.py)
 
 ![RegnierProblemLP](docs/RegnierProblemLP.png)
 
