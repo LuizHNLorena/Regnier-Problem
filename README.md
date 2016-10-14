@@ -12,15 +12,11 @@ Two [Python 3.4](https://www.python.org/download/releases/3.4.0/) classes were i
 To run both classes you will need to install [Python 3.4](https://www.python.org/download/releases/3.4.0/) and the [Igraph library] (http://igraph.org/python/). The RegnierProblem class requires the installation of the [CPLEX 12.6.0] (http://www-01.ibm.com/software/commerce/optimization/
 cplex-optimizer) solver and the [setup of its Python API](https://www.ibm.com/support/knowledgecenter/SSSA5P_12.6.3/ilog.odms.cplex.help/CPLEX/GettingStarted/topics/set_up/Python_setup.html).
 
-# Datasets format
-
-
-
 # Usage
 
 ### RegnierProblem
 
-The following diagram represents the RegnierProblem class. The documentation for this class can be found at:
+The following diagram represents the RegnierProblem class. The documentation for this class can be found at: [RegnierProblem.html](docs/RegnierProblem.html)
 
 ![RegnierProblem](docs/RegnierProblem.png)
 
