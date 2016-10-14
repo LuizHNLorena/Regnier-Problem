@@ -5,7 +5,7 @@ The repository contains the codes implemented for the article "Preprocessing Tec
 Two [Python 3.4](https://www.python.org/download/releases/3.4.0/) classes were implemented:
 
 - RegnierProblem: contains methods to create all the Integer Linear Programming models proposed in the article and run it in the CPLEX solver. This class only works if [CPLEX solver](https://www-01.ibm.com/software/commerce/optimization/cplex-optimizer/) is installed in the machine!
-- RegnierProblemLP: contains methods to create the models and save then in LP file format (.lp). This class is independent of the [CPLEX solver](https://www-01.ibm.com/software/commerce/optimization/cplex-optimizer/)!
+- RegnierProblemLP: contains methods to create the models and save then in [LP file format (.lp)](http://lpsolve.sourceforge.net/5.0/CPLEX-format.htm). This class is independent of the [CPLEX solver](https://www-01.ibm.com/software/commerce/optimization/cplex-optimizer/)!
 
 # Install
 
