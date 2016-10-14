@@ -41,3 +41,11 @@ Example of use:
 The following diagram represents the RegnierProblemLP class. The documentation for this class can be found at:
 
 ![RegnierProblemLP](docs/RegnierProblemLP.png)
+
+Example of use:
+
+    >>> from RegnierProblemLP import RegnierProblemLP
+    >>> problem = RegnierProblemLP("datasets/1-Lenses.txt")
+    >>> problem.saveRMalphaPlus("1-Lenses.lp")
+    Creating Model file...
+    Model file created.
