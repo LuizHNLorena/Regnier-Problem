@@ -38,7 +38,7 @@ Example of use:
 
 ### RegnierProblemLP
 
-The following diagram represents the RegnierProblemLP class. The documentation for this class can be found at: [docs/RegnierProblemLP.py](docs/RegnierProblemLP.html)
+The following diagram represents the RegnierProblemLP class. The documentation for this class can be found at: [docs/RegnierProblemLP.html](docs/RegnierProblemLP.html)
 
 ![RegnierProblemLP](docs/RegnierProblemLP.png)
 
