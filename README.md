@@ -20,8 +20,6 @@ The following diagram represents the RegnierProblem class. The documentation for
 
 Example of use:
 
-.. code-block:: pycon
-
     >>> from RegnierProblem import RegnierProblem
     >>> problem = RegnierProblem("datasets/1-Lenses.txt")
     >>> solution = problem.runRM()
