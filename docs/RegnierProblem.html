@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module RegnierProblem</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>RegnierProblem</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cpython34%5Clib%5C__pycache__%5Cregnierproblem.py">c:\python34\lib\__pycache__\regnierproblem.py</a></font></td></tr></table>
+    <p><tt>#coding:&nbsp;utf-8</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="cplex.html">cplex</a><br>
+</td><td width="25%" valign=top><a href="csv.html">csv</a><br>
+</td><td width="25%" valign=top><a href="time.html">time</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="RegnierProblem.html#RegnierProblem">RegnierProblem</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="RegnierProblem">class <strong>RegnierProblem</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Regnier&nbsp;Problem&nbsp;Class<br>
+&nbsp;<br>
+Clustering&nbsp;qualitative&nbsp;data&nbsp;through&nbsp;Integer&nbsp;Linear&nbsp;Programming.<br>
+&nbsp;<br>
+Attributes:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;S&nbsp;(list&nbsp;of&nbsp;list&nbsp;of&nbsp;int):&nbsp;Similarity&nbsp;Matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;n&nbsp;(int):&nbsp;Number&nbsp;of&nbsp;instances<br>
+&nbsp;&nbsp;&nbsp;&nbsp;m&nbsp;(int):&nbsp;Number&nbsp;of&nbsp;attributes<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="RegnierProblem-__init__"><strong>__init__</strong></a>(self, dataset)</dt><dd><tt>Receives&nbsp;dataset&nbsp;name&nbsp;and&nbsp;construct&nbsp;Similarity&nbsp;Matrix<br>
+&nbsp;<br>
+It&nbsp;receives&nbsp;as&nbsp;parameter&nbsp;the&nbsp;path&nbsp;to&nbsp;the&nbsp;dataset.&nbsp;The&nbsp;dataset&nbsp;is&nbsp;<br>
+stored&nbsp;temporaly&nbsp;in&nbsp;matrix&nbsp;'D',&nbsp;while&nbsp;its&nbsp;dimensions&nbsp;are&nbsp;store&nbsp;in&nbsp;'n'<br>
+and&nbsp;'m'.<br>
+&nbsp;<br>
+A&nbsp;Similarity&nbsp;Matrix&nbsp;'S',&nbsp;with&nbsp;size&nbsp;(nxn)&nbsp;is&nbsp;constructed&nbsp;using&nbsp;the&nbsp;simetric&nbsp;difference&nbsp;<br>
+between&nbsp;each&nbsp;element.<br>
+&nbsp;<br>
+Missing&nbsp;values&nbsp;'?'&nbsp;are&nbsp;compensated&nbsp;when&nbsp;calculating&nbsp;the&nbsp;simetric&nbsp;difference<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dataset&nbsp;(str):&nbsp;The&nbsp;path&nbsp;to&nbsp;the&nbsp;dataset&nbsp;file.</tt></dd></dl>
+
+<dl><dt><a name="RegnierProblem-runRM"><strong>runRM</strong></a>(self, lp_problem=False, debug=False, model_file=None)</dt><dd><tt>Original&nbsp;Model&nbsp;(RM)<br>
+&nbsp;<br>
+Creates&nbsp;the&nbsp;original&nbsp;model&nbsp;of&nbsp;Regnier&nbsp;Problem&nbsp;and&nbsp;runs&nbsp;in&nbsp;CPLEX.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lp_problem&nbsp;(bool,optional):&nbsp;If&nbsp;True&nbsp;run&nbsp;as&nbsp;Linear&nbsp;Programming&nbsp;instead&nbsp;of&nbsp;ILP.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;debug&nbsp;(bool,optional):&nbsp;Show&nbsp;debug&nbsp;information,&nbsp;mostly&nbsp;CPLEX&nbsp;output.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;model_file&nbsp;(str,optional):&nbsp;Save&nbsp;the&nbsp;model&nbsp;to&nbsp;.lp&nbsp;format&nbsp;file.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;Solution&nbsp;<a href="builtins.html#object">object</a>.</tt></dd></dl>
+
+<dl><dt><a name="RegnierProblem-runRMalpha"><strong>runRMalpha</strong></a>(self, cut=0, lp_problem=False, debug=False, model_file=None)</dt><dd><tt>Alpha&nbsp;Model&nbsp;(RMalpha0)<br>
+&nbsp;<br>
+Creates&nbsp;the&nbsp;Alpha&nbsp;model&nbsp;proposed&nbsp;by&nbsp;Miyauchi&nbsp;and&nbsp;Sukegawa[1]&nbsp;and&nbsp;runs&nbsp;in&nbsp;CPLEX.<br>
+&nbsp;<br>
+[1]&nbsp;Miyauchi,&nbsp;Atsushi,&nbsp;and&nbsp;Noriyoshi&nbsp;Sukegawa.&nbsp;<br>
+"Redundant&nbsp;constraints&nbsp;in&nbsp;the&nbsp;standard&nbsp;formulation&nbsp;for&nbsp;the&nbsp;clique&nbsp;partitioning&nbsp;problem."<br>
+Optimization&nbsp;Letters&nbsp;9.1&nbsp;(2015):&nbsp;199-207.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cut&nbsp;(int,optional):&nbsp;The&nbsp;default&nbsp;value&nbsp;corresponds&nbsp;to&nbsp;the&nbsp;model&nbsp;proposed&nbsp;by&nbsp;Miyauchi&nbsp;and&nbsp;Sukegawa[1].<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lp_problem&nbsp;(bool,optional):&nbsp;If&nbsp;True&nbsp;run&nbsp;as&nbsp;Linear&nbsp;Programming&nbsp;instead&nbsp;of&nbsp;ILP.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;debug&nbsp;(bool,optional):&nbsp;Show&nbsp;debug&nbsp;information,&nbsp;mostly&nbsp;CPLEX&nbsp;output.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;model_file&nbsp;(str,optional):&nbsp;Save&nbsp;the&nbsp;model&nbsp;to&nbsp;.lp&nbsp;format&nbsp;file.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;Solution&nbsp;<a href="builtins.html#object">object</a>.</tt></dd></dl>
+
+<dl><dt><a name="RegnierProblem-runRMalphaPlus"><strong>runRMalphaPlus</strong></a>(self, lp_problem=False, debug=False, model_file=None)</dt><dd><tt>Alpha&nbsp;Plus&nbsp;Model&nbsp;(RMalpha+)<br>
+&nbsp;<br>
+Creates&nbsp;the&nbsp;new&nbsp;model&nbsp;proposed&nbsp;as&nbsp;extension&nbsp;to&nbsp;the&nbsp;(RMalpha)&nbsp;proposed&nbsp;by&nbsp;Miyauchi&nbsp;and&nbsp;Sukegawa[1]&nbsp;and&nbsp;runs&nbsp;in&nbsp;CPLEX.<br>
+&nbsp;<br>
+[1]&nbsp;Miyauchi,&nbsp;Atsushi,&nbsp;and&nbsp;Noriyoshi&nbsp;Sukegawa.&nbsp;<br>
+"Redundant&nbsp;constraints&nbsp;in&nbsp;the&nbsp;standard&nbsp;formulation&nbsp;for&nbsp;the&nbsp;clique&nbsp;partitioning&nbsp;problem."<br>
+Optimization&nbsp;Letters&nbsp;9.1&nbsp;(2015):&nbsp;199-207.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lp_problem&nbsp;(bool,optional):&nbsp;If&nbsp;True&nbsp;run&nbsp;as&nbsp;Linear&nbsp;Programming&nbsp;instead&nbsp;of&nbsp;ILP.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;debug&nbsp;(bool,optional):&nbsp;Show&nbsp;debug&nbsp;information,&nbsp;mostly&nbsp;CPLEX&nbsp;output.&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;model_file&nbsp;(str,optional):&nbsp;Save&nbsp;the&nbsp;model&nbsp;to&nbsp;.lp&nbsp;format&nbsp;file.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;Solution&nbsp;<a href="builtins.html#object">object</a>.</tt></dd></dl>
+
+<dl><dt><a name="RegnierProblem-runRMbeta"><strong>runRMbeta</strong></a>(self, cut=0, lp_problem=False, debug=False, model_file=None)</dt><dd><tt>Beta&nbsp;Model&nbsp;(RMbeta0)<br>
+&nbsp;<br>
+Creates&nbsp;the&nbsp;Beta&nbsp;model&nbsp;proposed&nbsp;by&nbsp;Miyauchi&nbsp;and&nbsp;Sukegawa[1]&nbsp;and&nbsp;runs&nbsp;in&nbsp;CPLEX.<br>
+&nbsp;<br>
+[1]&nbsp;Miyauchi,&nbsp;Atsushi,&nbsp;and&nbsp;Noriyoshi&nbsp;Sukegawa.&nbsp;<br>
+"Redundant&nbsp;constraints&nbsp;in&nbsp;the&nbsp;standard&nbsp;formulation&nbsp;for&nbsp;the&nbsp;clique&nbsp;partitioning&nbsp;problem."<br>
+Optimization&nbsp;Letters&nbsp;9.1&nbsp;(2015):&nbsp;199-207.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cut(int,optional):&nbsp;The&nbsp;default&nbsp;value&nbsp;corresponds&nbsp;to&nbsp;the&nbsp;model&nbsp;proposed&nbsp;by&nbsp;Miyauchi&nbsp;and&nbsp;Sukegawa[1].<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lp_problem&nbsp;(bool,optional):&nbsp;If&nbsp;True&nbsp;run&nbsp;as&nbsp;Linear&nbsp;Programming&nbsp;instead&nbsp;of&nbsp;ILP.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;debug&nbsp;(bool,optional):&nbsp;Show&nbsp;debug&nbsp;information,&nbsp;mostly&nbsp;CPLEX&nbsp;output.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;model_file&nbsp;(str,optional):&nbsp;Save&nbsp;the&nbsp;model&nbsp;to&nbsp;.lp&nbsp;format&nbsp;file.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;Solution&nbsp;<a href="builtins.html#object">object</a>.</tt></dd></dl>
+
+<dl><dt><a name="RegnierProblem-runRMbetaPlus"><strong>runRMbetaPlus</strong></a>(self, lp_problem=False, debug=False, model_file=None)</dt><dd><tt>Beta&nbsp;Plus&nbsp;Model&nbsp;(RMbeta+)<br>
+&nbsp;<br>
+Creates&nbsp;the&nbsp;new&nbsp;model&nbsp;proposed&nbsp;as&nbsp;extension&nbsp;to&nbsp;the&nbsp;(RMbeta)&nbsp;proposed&nbsp;by&nbsp;Miyauchi&nbsp;and&nbsp;Sukegawa[1]&nbsp;and&nbsp;runs&nbsp;in&nbsp;CPLEX.<br>
+&nbsp;<br>
+[1]&nbsp;Miyauchi,&nbsp;Atsushi,&nbsp;and&nbsp;Noriyoshi&nbsp;Sukegawa.&nbsp;<br>
+"Redundant&nbsp;constraints&nbsp;in&nbsp;the&nbsp;standard&nbsp;formulation&nbsp;for&nbsp;the&nbsp;clique&nbsp;partitioning&nbsp;problem."<br>
+Optimization&nbsp;Letters&nbsp;9.1&nbsp;(2015):&nbsp;199-207.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lp_problem&nbsp;(bool,optional):&nbsp;If&nbsp;True&nbsp;run&nbsp;as&nbsp;Linear&nbsp;Programming&nbsp;instead&nbsp;of&nbsp;ILP.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;debug&nbsp;(bool,optional):&nbsp;Show&nbsp;debug&nbsp;information,&nbsp;mostly&nbsp;CPLEX&nbsp;output.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;model_file&nbsp;(str,optional):&nbsp;Save&nbsp;the&nbsp;model&nbsp;to&nbsp;.lp&nbsp;format&nbsp;file.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;Solution&nbsp;<a href="builtins.html#object">object</a>.</tt></dd></dl>
+
+<dl><dt><a name="RegnierProblem-runRMgamma"><strong>runRMgamma</strong></a>(self, lp_problem=False, debug=False, model_file=None)</dt><dd><tt>Gamma&nbsp;Model&nbsp;(RMgamma)<br>
+&nbsp;<br>
+Creates&nbsp;the&nbsp;Gamma&nbsp;model&nbsp;that&nbsp;extend&nbsp;the&nbsp;models&nbsp;proposed&nbsp;by&nbsp;Miyauchi&nbsp;and&nbsp;Sukegawa[1]&nbsp;and&nbsp;runs&nbsp;in&nbsp;CPLEX.<br>
+&nbsp;<br>
+[1]&nbsp;Miyauchi,&nbsp;Atsushi,&nbsp;and&nbsp;Noriyoshi&nbsp;Sukegawa.&nbsp;<br>
+"Redundant&nbsp;constraints&nbsp;in&nbsp;the&nbsp;standard&nbsp;formulation&nbsp;for&nbsp;the&nbsp;clique&nbsp;partitioning&nbsp;problem."<br>
+Optimization&nbsp;Letters&nbsp;9.1&nbsp;(2015):&nbsp;199-207.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lp_problem&nbsp;(bool,optional):&nbsp;If&nbsp;True&nbsp;run&nbsp;as&nbsp;Linear&nbsp;Programming&nbsp;instead&nbsp;of&nbsp;ILP.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;debug&nbsp;(bool,optional):&nbsp;Show&nbsp;debug&nbsp;information,&nbsp;mostly&nbsp;CPLEX&nbsp;output.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;model_file&nbsp;(str,optional):&nbsp;Save&nbsp;the&nbsp;model&nbsp;to&nbsp;.lp&nbsp;format&nbsp;file.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;Solution&nbsp;<a href="builtins.html#object">object</a>.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>
