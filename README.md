@@ -22,14 +22,17 @@ Example of use:
 
     >>> from RegnierProblem import RegnierProblem
     >>> problem = RegnierProblem("datasets/1-Lenses.txt")
-    >>> solution = problem.runRM()
+    >>> solution = problem.runRMalphaPlus()
     >>> print(solution)
-    {'num_rows': 6072, 
-     'num_cols': 276, 
+    {'num_rows': 2400,
+     'num_cols': 276,
      'objective': 72.0,
-     'time_solver': 0.5150000000000001, 
-     'heuristic': None,  
-     'groups': [0, 1, 0, 2, 3, 1, 3, 2, 0, 1, 0, 2, 3, 1, 3, 2, 0, 1, 0, 2, 3, 1, 3, 2]}
+     'time_solver': 0.18799999999999994,
+     'heuristic': {'time_total': 0.008021116256713867, 
+                   'time_find_best_cut': 0.0010020732879638672, 
+                   'time_graph_construction': 0.00701904296875, 
+                   'cut': 2}, 
+     'groups': [0, 1, 0, 1, 2, 2, 3, 3, 0, 1, 0, 1, 2, 2, 3, 3, 0, 1, 0, 1, 2, 2, 3, 3]}
 
 ### RegnierProblemLP
 
