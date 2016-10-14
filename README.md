@@ -38,6 +38,6 @@ Example of use:
 
 ### RegnierProblemLP
 
-The following diagram represents this class. The documentation for this class can be found at:
+The following diagram represents the RegnierProblemLP class. The documentation for this class can be found at:
 
 ![RegnierProblemLP](docs/RegnierProblemLP.png)
