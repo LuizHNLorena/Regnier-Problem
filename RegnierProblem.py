@@ -72,7 +72,7 @@ class RegnierProblem:
                         else:
                             total_missing = total_missing + 1
                     self._S[i][j] = -((self._m - total_missing) - 2*(total))
-    
+        
     def runRM(self,lp_problem=False,debug=False,model_file=None):
         """Original Model (RM)
 
@@ -198,7 +198,7 @@ class RegnierProblem:
             objective = my_prob.solution.get_objective_value()
 
             # Solution
-            X = my_prob.solution.get_values()
+            x = my_prob.solution.get_values()
 
             # Creating partition
             groups = []
@@ -206,25 +206,22 @@ class RegnierProblem:
                 groups.append(-1)
 
             groupID = 0
-            i=0
-            j=1
-            for x in X:                
-                if x > 0:
-                    # Both objects don't have group, put then together on a new
-                    if groups[i] == -1 and groups[j] == -1:
-                        groups[i] = groupID
-                        groups[j] = groupID
-                        groupID = groupID + 1
-                    else:
-                        # If i object don't have group put him on j group
-                        if groups[i] == -1:
-                            groups[i] = groups[j]
+            for i in range(self._n):
+                for j in range(self._n):
+                    index = X[i][j]
+                    if x[index] > 0:
+                        # Both objects don't have group, put then together on a new
+                        if groups[i] == -1 and groups[j] == -1:
+                            groups[i] = groupID
+                            groups[j] = groupID
+                            groupID = groupID + 1
                         else:
-                            groups[j] = groups[i]
-                j = j+1
-                if j == self._n:
-                    i = i + 1
-                    j = i + 1
+                            # If i object don't have group put him on j group
+                            if groups[i] == -1:
+                                groups[i] = groups[j]
+                            else:
+                                groups[j] = groups[i]
+
             # The objects that remained alone create its own group
             for i in range(len(groups)):
                 if groups[i] == -1:
@@ -243,7 +240,7 @@ class RegnierProblem:
             print (exc)
          
         return solution
-    
+
     def runRMalpha(self,cut=0,lp_problem=False,debug=False,model_file=None):
         """Alpha Model (RMalpha0)
 
@@ -378,7 +375,7 @@ class RegnierProblem:
             objective = my_prob.solution.get_objective_value()
 
             # Solution
-            X = my_prob.solution.get_values()
+            x = my_prob.solution.get_values()
 
             # Creating partition
             groups = []
@@ -386,25 +383,22 @@ class RegnierProblem:
                 groups.append(-1)
 
             groupID = 0
-            i=0
-            j=1
-            for x in X:                
-                if x > 0:
-                    # Both objects don't have group, put then together on a new
-                    if groups[i] == -1 and groups[j] == -1:
-                        groups[i] = groupID
-                        groups[j] = groupID
-                        groupID = groupID + 1
-                    else:
-                        # If i object don't have group put him on j group
-                        if groups[i] == -1:
-                            groups[i] = groups[j]
+            for i in range(self._n):
+                for j in range(self._n):
+                    index = X[i][j]
+                    if x[index] > 0:
+                        # Both objects don't have group, put then together on a new
+                        if groups[i] == -1 and groups[j] == -1:
+                            groups[i] = groupID
+                            groups[j] = groupID
+                            groupID = groupID + 1
                         else:
-                            groups[j] = groups[i]
-                j = j+1
-                if j == self._n:
-                    i = i + 1
-                    j = i + 1
+                            # If i object don't have group put him on j group
+                            if groups[i] == -1:
+                                groups[i] = groups[j]
+                            else:
+                                groups[j] = groups[i]
+
             # The objects that remained alone create its own group
             for i in range(len(groups)):
                 if groups[i] == -1:
@@ -582,7 +576,7 @@ class RegnierProblem:
             objective = my_prob.solution.get_objective_value()
 
             # Solution
-            X = my_prob.solution.get_values()
+            x = my_prob.solution.get_values()
 
             # Creating partition
             groups = []
@@ -590,25 +584,22 @@ class RegnierProblem:
                 groups.append(-1)
 
             groupID = 0
-            i=0
-            j=1
-            for x in X:                
-                if x > 0:
-                    # Both objects don't have group, put then together on a new
-                    if groups[i] == -1 and groups[j] == -1:
-                        groups[i] = groupID
-                        groups[j] = groupID
-                        groupID = groupID + 1
-                    else:
-                        # If i object don't have group put him on j group
-                        if groups[i] == -1:
-                            groups[i] = groups[j]
+            for i in range(self._n):
+                for j in range(self._n):
+                    index = X[i][j]
+                    if x[index] > 0:
+                        # Both objects don't have group, put then together on a new
+                        if groups[i] == -1 and groups[j] == -1:
+                            groups[i] = groupID
+                            groups[j] = groupID
+                            groupID = groupID + 1
                         else:
-                            groups[j] = groups[i]
-                j = j+1
-                if j == self._n:
-                    i = i + 1
-                    j = i + 1
+                            # If i object don't have group put him on j group
+                            if groups[i] == -1:
+                                groups[i] = groups[j]
+                            else:
+                                groups[j] = groups[i]
+
             # The objects that remained alone create its own group
             for i in range(len(groups)):
                 if groups[i] == -1:
@@ -787,7 +778,7 @@ class RegnierProblem:
             objective = my_prob.solution.get_objective_value()
 
             # Solution
-            X = my_prob.solution.get_values()
+            x = my_prob.solution.get_values()
 
             # Creating partition
             groups = []
@@ -795,25 +786,22 @@ class RegnierProblem:
                 groups.append(-1)
 
             groupID = 0
-            i=0
-            j=1
-            for x in X:                
-                if x > 0:
-                    # Both objects don't have group, put then together on a new
-                    if groups[i] == -1 and groups[j] == -1:
-                        groups[i] = groupID
-                        groups[j] = groupID
-                        groupID = groupID + 1
-                    else:
-                        # If i object don't have group put him on j group
-                        if groups[i] == -1:
-                            groups[i] = groups[j]
+            for i in range(self._n):
+                for j in range(self._n):
+                    index = X[i][j]
+                    if x[index] > 0:
+                        # Both objects don't have group, put then together on a new
+                        if groups[i] == -1 and groups[j] == -1:
+                            groups[i] = groupID
+                            groups[j] = groupID
+                            groupID = groupID + 1
                         else:
-                            groups[j] = groups[i]
-                j = j+1
-                if j == self._n:
-                    i = i + 1
-                    j = i + 1
+                            # If i object don't have group put him on j group
+                            if groups[i] == -1:
+                                groups[i] = groups[j]
+                            else:
+                                groups[j] = groups[i]
+
             # The objects that remained alone create its own group
             for i in range(len(groups)):
                 if groups[i] == -1:
