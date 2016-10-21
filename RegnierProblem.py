@@ -207,7 +207,7 @@ class RegnierProblem:
 
             groupID = 0
             for i in range(self._n):
-                for j in range(self._n):
+                for j in range(i+1,self._n):
                     index = X[i][j]
                     if x[index] > 0:
                         # Both objects don't have group, put then together on a new
@@ -384,7 +384,7 @@ class RegnierProblem:
 
             groupID = 0
             for i in range(self._n):
-                for j in range(self._n):
+                for j in range(i+1,self._n):
                     index = X[i][j]
                     if x[index] > 0:
                         # Both objects don't have group, put then together on a new
@@ -585,7 +585,7 @@ class RegnierProblem:
 
             groupID = 0
             for i in range(self._n):
-                for j in range(self._n):
+                for j in range(i+1,self._n):
                     index = X[i][j]
                     if x[index] > 0:
                         # Both objects don't have group, put then together on a new
@@ -787,7 +787,7 @@ class RegnierProblem:
 
             groupID = 0
             for i in range(self._n):
-                for j in range(self._n):
+                for j in range(i+1,self._n):
                     index = X[i][j]
                     if x[index] > 0:
                         # Both objects don't have group, put then together on a new
